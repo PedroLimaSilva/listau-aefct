@@ -32,7 +32,9 @@
   @include clearfix;
 
   @media (min-width: $grid-float-breakpoint) {
-    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
