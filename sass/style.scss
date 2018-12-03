@@ -471,10 +471,13 @@ h1, h2, h3, h4, h5, h6 {
 	background-attachment: fixed;
 	position: relative;
 	width: 100%;
-	
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: $brand-primary;
 	color: #fff;
 	overflow: hidden;
+	min-height: 100vh;
 	.gradient {
 		position: absolute;
 		top: 0;
@@ -487,41 +490,36 @@ h1, h2, h3, h4, h5, h6 {
 		
 		@include fh5co-gradient;
 	}
-	&, .text-wrap {
-		height: 900px;
-	}
-	.text-wrap {
-		display: table;
-		width: 100%;
-		position: relative;
-		z-index: 4;
-	}
-	.text-inner {
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		a {
+	a {
+		color: rgba(255,255,255,1);
+		border-bottom: 1px dashed rgba(255,255,255,.5);
+		@include transition(.5s);
+		&:hover, &:active, &:focus {
+			text-decoration: none;
 			color: rgba(255,255,255,1);
-			border-bottom: 1px dashed rgba(255,255,255,.5);
-			@include transition(.5s);
-			&:hover, &:active, &:focus {
-				text-decoration: none;
-				color: rgba(255,255,255,1);
-				border-bottom: 1px dashed rgba(255,255,255,1);
-			}
+			border-bottom: 1px dashed rgba(255,255,255,1);
 		}
-		h1 {
-			font-size: 50px;
-			color: rgba(255,255,255,1);
-			margin: 0 0 20px 0;
-		}
-		h2 {
-			font-size: 28px;
-			line-height: 38px;
-			font-weight: 300;
-			color: rgba(255,255,255,.8);
-			margin: 0;
-		}
+	}	
+	.img-container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: column nowrap;
+	}
+	.img-responsive{
+		max-height: 50vh;
+	}
+	h1 {
+		font-size: 50px;
+		color: rgba(255,255,255,1);
+		margin: 0 0 20px 0;
+	}
+	h2 {
+		font-size: 28px;
+		line-height: 38px;
+		font-weight: 300;
+		color: rgba(255,255,255,.8);
+		margin: 0;
 	}
 }
 
